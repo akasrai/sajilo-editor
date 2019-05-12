@@ -15,3 +15,18 @@ export const toPx = value => {
 export const toPercentage = value => {
    return `${value}%`;
 };
+
+/**
+ * Adds option to select element.
+ *
+ * @param {Object} parent
+ * @param {Object} options
+ */
+export const addSelectOption = (parent, options) => {
+   for (let key in options) {
+      const option = document.createElement("option");
+      option.value = key;
+      option.text = options[key];
+      parent.appendChild(option);
+   }
+};
