@@ -32,14 +32,18 @@
 #strike-btn,
 #text-color,
 #underline-btn,
-#text-highlight {
+#text-highlight,
+#align-left,
+#align-right,
+#align-center,
+#align-justify {
    padding: 4px 0;
    border-radius: 3px;
    margin: 0 1px 0 1px;
    display: inline-block;
    cursor: pointer;
-   font-weight: bold;
    width: 25px;
+   height: 25px;
    text-align: center;
    color: #353535;
 }
@@ -49,7 +53,11 @@
 #strike-btn:hover,
 #text-color:hover,
 #underline-btn:hover,
-#text-highlight:hover {
+#text-highlight:hover,
+#align-left:hover,
+#align-right:hover,
+#align-center:hover,
+#align-justify:hover {
    background: rgb(210, 214, 216);
 }
 

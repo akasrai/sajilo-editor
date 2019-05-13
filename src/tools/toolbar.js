@@ -32,10 +32,16 @@ const addToolBar = textArea => {
    Tools.addHeadingTypeList(toolBar);
    Tools.addFontList(toolBar);
    Tools.addFontSizeList(toolBar);
+
    Tools.addBoldBtn(toolBar);
    Tools.addItalicBtn(toolBar);
    Tools.addUnderlineBtn(toolBar);
    Tools.addStrikeBtn(toolBar);
+
+   Tools.addAlignLeftBtn(toolBar);
+   Tools.addAlignCenterBtn(toolBar);
+   Tools.addAlignRightBtn(toolBar);
+   Tools.addAlignJustifyBtn(toolBar);
 };
 
 /**

@@ -16,6 +16,11 @@ export const TOOLBAR = {
    UNDERLINE_BTN_ID: "underline-btn",
    TEXT_HIGHLIGHT_BTN_ID: "text-highlight",
 
+   ALIGN_LEFT_BTN_ID: "align-left",
+   ALIGN_RIGHT_BTN_ID: "align-right",
+   ALIGN_CENTER_BTN_ID: "align-center",
+   ALIGN_JUSTIFY_BTN_ID: "align-justify",
+
    SEPERATOR: "|",
 
    ACTIVE_BTN: "active-btn"

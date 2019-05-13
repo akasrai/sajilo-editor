@@ -1,4 +1,5 @@
 import { addSelectOption } from "../utils";
+// import alignLeft from "../assets/icons/align-left.svg";
 import { fonts, fontSize, TOOLBAR, headingTypes } from "../constants";
 
 /**
@@ -169,4 +170,77 @@ export const addStrikeBtn = parent => {
 
    parent.appendChild(strikeBtn);
    setSeperator(strikeBtn);
+};
+
+/**
+ * Adds align left button.
+ *
+ * @param {Object} parent
+ */
+export const addAlignLeftBtn = parent => {
+   const alignLeftBtn = document.createElement("span");
+
+   alignLeftBtn.setAttribute("id", TOOLBAR.ALIGN_LEFT_BTN_ID);
+   alignLeftBtn.className = "glyphicon glyphicon-align-left";
+
+   alignLeftBtn.onclick = function() {
+      setActive(alignLeftBtn);
+   };
+
+   parent.appendChild(alignLeftBtn);
+};
+
+/**
+ * Adds align right button.
+ *
+ * @param {Object} parent
+ */
+export const addAlignRightBtn = parent => {
+   const alignRightBtn = document.createElement("span");
+
+   alignRightBtn.setAttribute("id", TOOLBAR.ALIGN_RIGHT_BTN_ID);
+   alignRightBtn.className = "glyphicon glyphicon-align-right";
+
+   alignRightBtn.onclick = function() {
+      setActive(alignRightBtn);
+   };
+
+   parent.appendChild(alignRightBtn);
+};
+
+/**
+ * Adds align center button.
+ *
+ * @param {Object} parent
+ */
+export const addAlignCenterBtn = parent => {
+   const alignCenterBtn = document.createElement("span");
+
+   alignCenterBtn.setAttribute("id", TOOLBAR.ALIGN_CENTER_BTN_ID);
+   alignCenterBtn.className = "glyphicon glyphicon-align-center";
+
+   alignCenterBtn.onclick = function() {
+      setActive(alignCenterBtn);
+   };
+
+   parent.appendChild(alignCenterBtn);
+};
+
+/**
+ * Adds jsutify button.
+ *
+ * @param {Object} parent
+ */
+export const addAlignJustifyBtn = parent => {
+   const alignJustifyBtn = document.createElement("span");
+
+   alignJustifyBtn.setAttribute("id", TOOLBAR.ALIGN_JUSTIFY_BTN_ID);
+   alignJustifyBtn.className = "glyphicon glyphicon-align-justify";
+
+   alignJustifyBtn.onclick = function() {
+      setActive(alignJustifyBtn);
+   };
+
+   parent.appendChild(alignJustifyBtn);
+   setSeperator(alignJustifyBtn);
 };
