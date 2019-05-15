@@ -30,7 +30,14 @@ export const FOOTBAR = {
    ID: "footbar"
 };
 
-export const headingTypes = {
+export const ELEMENT = {
+   DIV: "div",
+   SPAN: "span",
+   BUTTON: "button",
+   SELECT: "select"
+};
+
+export const HEADING_TYPES = {
    p: "Paragraph",
    h1: "Heading 1",
    h2: "Heading 2",
@@ -38,10 +45,22 @@ export const headingTypes = {
    h4: "Heading 4"
 };
 
-export const fonts = {
+export const FONTS = {
    arial: "Arial",
    impact: "Impact",
    calibri: "Calibri"
 };
 
-export const fontSize = [8, 9, 10, 11, 12, 14, 18, 24, 30, 48, 60, 72, 96];
+export const FONT_SIZE = [8, 9, 10, 11, 12, 14, 18, 24, 30, 48, 60, 72, 96];
+
+export const ICON = {
+   BOLD: "B",
+   ITALIC: "I",
+   UNDERLINE: "U",
+   STRIKE: "&nbsp;S&nbsp;",
+
+   ALIGN_LEFT: "glyphicon glyphicon-align-left",
+   ALIGN_RIGHT: "glyphicon glyphicon-align-right",
+   ALIGN_CENTER: "glyphicon glyphicon-align-center",
+   ALIGN_JUSTIFY: "glyphicon glyphicon-align-justify"
+};

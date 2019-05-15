@@ -6,8 +6,8 @@ import { TOOLBAR, FOOTBAR } from "../constants";
  * Initilize tool bar of editor.
  *
  */
-export const initToolBar = () => {
-   const textArea = document.getElementById(TOOLBAR.TEXTAREA_ID);
+export const initToolBar = parent => {
+   const textArea = parent;
 
    addToolBar(textArea);
    addFooterBar(textArea);
