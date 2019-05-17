@@ -1,29 +1,35 @@
 export const TOOLBAR = {
-   ID: "toolbar",
-   FONT_LIST_ID: "font-list",
-   TEXTAREA_ID: "sajilo-editor",
+   SEPERATOR: "|"
+};
 
-   SELECT_TAG_CLASS: "select-box",
-   SELECT_TAG_PARENT: "select-box-wrapper",
+export const CLASS = {
+   ACTIVE_BTN: "active-btn",
+   SELECT_TAG: "select-box",
+   TEXTAREA: "sajilo-editor",
+   HTML_TEXTAREA: "html-textarea",
+   SELECT_TAG_PARENT: "select-box-wrapper"
+};
 
-   HEADING_TYPE_ID: "heading-type",
-   FONT_SIZE_LIST_ID: "font-size-list",
+export const ID = {
+   TOOLBAR: "toolbar",
 
-   BOLD_BTN_ID: "bold-btn",
-   ITALIC_BTN_ID: "italic-btn",
-   STRIKE_BTN_ID: "strike-btn",
-   TEXT_COLOR_BTN_ID: "text-color",
-   UNDERLINE_BTN_ID: "underline-btn",
-   TEXT_HIGHLIGHT_BTN_ID: "text-highlight",
+   FONT_LIST: "fontList",
+   TEXTAREA: "sajiloEditor",
 
-   ALIGN_LEFT_BTN_ID: "align-left",
-   ALIGN_RIGHT_BTN_ID: "align-right",
-   ALIGN_CENTER_BTN_ID: "align-center",
-   ALIGN_JUSTIFY_BTN_ID: "align-justify",
+   HEADING_TYPE: "headingType",
+   FONT_SIZE_LIST: "fontSizeList",
 
-   SEPERATOR: "|",
+   BOLD_BTN: "boldBtn",
+   ITALIC_BTN: "italicBtn",
+   STRIKE_BTN: "strikeBtn",
+   TEXT_COLOR_BTN: "textBolor",
+   UNDERLINE_BTN: "underlineBtn",
+   TEXT_HIGHLIGHT_BTN: "textHighlight",
 
-   ACTIVE_BTN: "active-btn"
+   ALIGN_LEFT_BTN: "alignLeft",
+   ALIGN_RIGHT_BTN: "alignRight",
+   ALIGN_CENTER_BTN: "alignCenter",
+   ALIGN_JUSTIFY_BTN: "alignJustify"
 };
 
 export const FOOTBAR = {
@@ -31,10 +37,16 @@ export const FOOTBAR = {
 };
 
 export const ELEMENT = {
+   BOLD: "b",
    DIV: "div",
+   STRIKE: "s",
+   ITALIC: "i",
    SPAN: "span",
+   UNDERLINE: "u",
+   INPUT: "input",
    BUTTON: "button",
-   SELECT: "select"
+   SELECT: "select",
+   DATA_LIST: "datalist"
 };
 
 export const HEADING_TYPES = {

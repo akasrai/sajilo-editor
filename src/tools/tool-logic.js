@@ -1,4 +1,4 @@
-import { TOOLBAR, ELEMENT } from "../constants";
+import { TOOLBAR, ID, CLASS, ELEMENT } from "../constants";
 
 /**
  * Creates element according to properties given.
@@ -7,13 +7,20 @@ import { TOOLBAR, ELEMENT } from "../constants";
  */
 export const createTool = prop => {
    const elem = document.createElement(prop.type);
-   elem.setAttribute("id", prop.id);
-   elem.className = prop.className ? prop.className : "";
+   elem.setAttribute("id", prop.id || "");
+   elem.className = prop.className || "";
 
-   elem.onclick = function(e) {
-      setActive(elem);
-      handleToolAction(e);
-   };
+   if (prop.list) elem.setAttribute("list", prop.list);
+
+   if (prop.type == ELEMENT.SELECT)
+      elem.onchange = function(e) {
+         handleToolAction(e);
+      };
+   else
+      elem.onclick = function(e) {
+         setActive(elem);
+         handleToolAction(e);
+      };
 
    prop.parent.appendChild(elem);
 
@@ -42,14 +49,14 @@ export const addSelectOption = (parent, options) => {
  */
 const setActive = elem => {
    if (elem.classList) {
-      elem.classList.toggle(TOOLBAR.ACTIVE_BTN);
+      elem.classList.toggle(CLASS.ACTIVE_BTN);
    } else {
       // For IE9
       let classes = elem.className.split(" ");
-      let i = classes.indexOf(TOOLBAR.ACTIVE_BTN);
+      let i = classes.indexOf(CLASS.ACTIVE_BTN);
 
       if (i >= 0) classes.splice(i, 1);
-      else classes.push(TOOLBAR.ACTIVE_BTN);
+      else classes.push(CLASS.ACTIVE_BTN);
       elem.className = classes.join(" ");
    }
 };
@@ -62,7 +69,7 @@ const setActive = elem => {
 export const selectParent = parent => {
    const selectTagParent = document.createElement("div");
 
-   selectTagParent.className = TOOLBAR.SELECT_TAG_PARENT;
+   selectTagParent.className = CLASS.SELECT_TAG_PARENT;
    parent.appendChild(selectTagParent);
 
    return selectTagParent;
@@ -87,23 +94,29 @@ export const addSeperator = parent => {
  * @param {Object} event
  */
 const handleToolAction = event => {
-   const editor = document.getElementById(TOOLBAR.TEXTAREA_ID);
-
    switch (event.target.id) {
-      case TOOLBAR.BOLD_BTN_ID:
-         boldTextAction();
+      case ID.BOLD_BTN:
+         document.execCommand("bold");
          break;
 
-      case TOOLBAR.ITALIC_BTN_ID:
-         italicTextAction();
+      case ID.ITALIC_BTN:
+         document.execCommand("italic");
          break;
 
-      case TOOLBAR.UNDERLINE_BTN_ID:
-         underlineTextAction();
+      case ID.UNDERLINE_BTN:
+         document.execCommand("underline");
          break;
 
-      case TOOLBAR.STRIKE_BTN_ID:
-         strikeTextAction();
+      case ID.STRIKE_BTN:
+         document.execCommand("strikethrough");
+         break;
+
+      case ID.HEADING_TYPE:
+         formatTextBlock(event.target.value);
+         break;
+
+      case ID.FONT_SIZE_LIST:
+         document.execCommand("fontSize", false, event.target.value);
          break;
 
       default:
@@ -112,62 +125,10 @@ const handleToolAction = event => {
 };
 
 /**
- * Bold text effect.
+ * Formats text with given tag name.
  *
+ * @param {String} tag
  */
-const boldTextAction = () => {
-   const span = document.createElement(ELEMENT.SPAN);
-
-   span.style.fontWeight = "bold";
-   dispatchAction(span);
-};
-
-/**
- * Italic text effect.
- *
- */
-const italicTextAction = () => {
-   const span = document.createElement(ELEMENT.SPAN);
-
-   span.style.fontStyle = "italic";
-   dispatchAction(span);
-};
-
-/**
- * Underline text effect.
- *
- */
-const underlineTextAction = () => {
-   const span = document.createElement(ELEMENT.SPAN);
-
-   span.style.textDecoration = "underline";
-   dispatchAction(span);
-};
-
-/**
- * Strike text effect.
- *
- */
-const strikeTextAction = () => {
-   const span = document.createElement(ELEMENT.SPAN);
-
-   span.style.textDecoration = "line-through";
-   dispatchAction(span);
-};
-
-/**
- * Add style range according to action clicked.
- *
- * @param {Object} elem
- */
-const dispatchAction = elem => {
-   if (window.getSelection) {
-      const selectedText = window.getSelection();
-      if (selectedText.rangeCount) {
-         const range = selectedText.getRangeAt(0).cloneRange();
-         range.surroundContents(elem);
-         selectedText.removeAllRanges();
-         selectedText.addRange(range);
-      }
-   }
+const formatTextBlock = tag => {
+   document.execCommand("formatBlock", false, `<${tag}>`);
 };

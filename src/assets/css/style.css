@@ -27,16 +27,16 @@
    box-shadow: none;
 }
 
-#bold-btn,
-#italic-btn,
-#strike-btn,
-#text-color,
-#underline-btn,
-#text-highlight,
-#align-left,
-#align-right,
-#align-center,
-#align-justify {
+#boldBtn,
+#italicBtn,
+#strikeBtn,
+#textColor,
+#underlineBtn,
+#textHighlight,
+#alignLeft,
+#alignRight,
+#alignCenter,
+#alignJustify {
    padding: 4px 0;
    border-radius: 3px;
    margin: 0 1px 0 1px;
@@ -51,37 +51,45 @@
    outline: none;
 }
 
-#bold-btn:hover,
-#italic-btn:hover,
-#strike-btn:hover,
-#text-color:hover,
-#underline-btn:hover,
-#text-highlight:hover,
-#align-left:hover,
-#align-right:hover,
-#align-center:hover,
-#align-justify:hover {
+#boldBtn:hover,
+#italicBtn:hover,
+#strikeBtn:hover,
+#textColor:hover,
+#underlineBtn:hover,
+#textHighlight:hover,
+#alignLeft:hover,
+#alignRight:hover,
+#alignCenter:hover,
+#alignJustify:hover {
    background: rgb(210, 214, 216);
 }
 
-#bold-btn {
+#boldBtn {
    font-weight: bold;
 }
 
-#italic-btn {
+#italicBtn {
    font-style: italic;
 }
 
-#underline-btn {
+#underlineBtn {
    text-decoration: underline;
 }
 
-#strike-btn {
+#strikeBtn {
    text-decoration: line-through;
 }
 
 .active-btn {
    background: rgb(210, 214, 216) !important;
+}
+
+.html-textarea {
+   width: 100%;
+   height: -moz-available; /* WebKit-based browsers will ignore this. */
+   height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+   height: fill-available;
+   display: none;
 }
 
 /* Reset .select-box */
@@ -142,4 +150,12 @@
 
 .select-box-wrapper:hover {
    background: rgb(210, 214, 216);
+}
+
+input.select-box {
+   width: 40px;
+}
+
+input.select-box::-webkit-calendar-picker-indicator {
+   display: none;
 }

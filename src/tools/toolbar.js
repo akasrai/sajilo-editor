@@ -1,6 +1,6 @@
 import * as Tools from "./tools";
+import { ID, FOOTBAR } from "../constants";
 import { toPercentage, toPx } from "../utils";
-import { TOOLBAR, FOOTBAR } from "../constants";
 
 /**
  * Initilize tool bar of editor.
@@ -25,7 +25,7 @@ const addToolBar = textArea => {
    toolBar.style.background = "#efefef";
    toolBar.style.border = "1px solid #888";
    toolBar.style.padding = toPx(10);
-   toolBar.setAttribute("id", TOOLBAR.ID);
+   toolBar.setAttribute("id", ID.TOOLBAR);
 
    textArea.insertAdjacentElement("beforeBegin", toolBar);
 
