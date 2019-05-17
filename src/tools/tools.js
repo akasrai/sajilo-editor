@@ -6,8 +6,10 @@ import {
 } from "./tool-logic";
 
 import {
+   ID,
    ICON,
    FONTS,
+   CLASS,
    ELEMENT,
    TOOLBAR,
    FONT_SIZE,
@@ -22,10 +24,10 @@ import {
 export const addHeadingTypeList = parent => {
    const selectTagParent = selectParent(parent);
    const headingTypeList = createTool({
+      id: ID.HEADING_TYPE,
       type: ELEMENT.SELECT,
       parent: selectTagParent,
-      id: TOOLBAR.HEADING_TYPE_ID,
-      className: TOOLBAR.SELECT_TAG_CLASS
+      className: CLASS.SELECT_TAG
    });
 
    addSeperator(selectTagParent);
@@ -40,10 +42,10 @@ export const addHeadingTypeList = parent => {
 export const addFontList = parent => {
    const selectTagParent = selectParent(parent);
    const fontList = createTool({
+      id: ID.FONT_LIST,
       type: ELEMENT.SELECT,
       parent: selectTagParent,
-      id: TOOLBAR.FONT_LIST_ID,
-      className: TOOLBAR.SELECT_TAG_CLASS
+      className: CLASS.SELECT_TAG
    });
 
    addSeperator(selectTagParent);
@@ -58,10 +60,10 @@ export const addFontList = parent => {
 export const addFontSizeList = parent => {
    const selectTagParent = selectParent(parent);
    const fontSizeList = createTool({
+      id: ID.FONT_SIZE_LIST,
       type: ELEMENT.SELECT,
       parent: selectTagParent,
-      id: TOOLBAR.FONT_SIZE_LIST_ID,
-      className: TOOLBAR.SELECT_TAG_CLASS
+      className: CLASS.SELECT_TAG
    });
 
    addSeperator(selectTagParent);
@@ -76,8 +78,8 @@ export const addFontSizeList = parent => {
 export const addBoldBtn = parent => {
    const boldBtn = createTool({
       parent: parent,
-      type: ELEMENT.BUTTON,
-      id: TOOLBAR.BOLD_BTN_ID
+      id: ID.BOLD_BTN,
+      type: ELEMENT.BUTTON
    });
    boldBtn.innerHTML = ICON.BOLD;
 };
@@ -90,8 +92,8 @@ export const addBoldBtn = parent => {
 export const addItalicBtn = parent => {
    const italicBtn = createTool({
       parent: parent,
-      type: ELEMENT.BUTTON,
-      id: TOOLBAR.ITALIC_BTN_ID
+      id: ID.ITALIC_BTN,
+      type: ELEMENT.BUTTON
    });
    italicBtn.innerHTML = ICON.ITALIC;
 };
@@ -105,7 +107,7 @@ export const addUnderlineBtn = parent => {
    const underlineBtn = createTool({
       parent: parent,
       type: ELEMENT.BUTTON,
-      id: TOOLBAR.UNDERLINE_BTN_ID
+      id: ID.UNDERLINE_BTN
    });
    underlineBtn.innerHTML = ICON.UNDERLINE;
 };
@@ -118,8 +120,8 @@ export const addUnderlineBtn = parent => {
 export const addStrikeBtn = parent => {
    const strikeBtn = createTool({
       parent: parent,
-      type: ELEMENT.BUTTON,
-      id: TOOLBAR.STRIKE_BTN_ID
+      id: ID.STRIKE_BTN,
+      type: ELEMENT.BUTTON
    });
    strikeBtn.innerHTML = ICON.STRIKE;
    addSeperator(strikeBtn);
@@ -134,8 +136,8 @@ export const addAlignLeftBtn = parent => {
    const alignLeftBtn = createTool({
       parent: parent,
       type: ELEMENT.BUTTON,
-      className: ICON.ALIGN_LEFT,
-      id: TOOLBAR.ALIGN_LEFT_BTN_ID
+      id: ID.ALIGN_LEFT_BTN,
+      className: ICON.ALIGN_LEFT
    });
 };
 
@@ -148,8 +150,8 @@ export const addAlignRightBtn = parent => {
    const alignRightBtn = createTool({
       parent: parent,
       type: ELEMENT.BUTTON,
-      className: ICON.ALIGN_RIGHT,
-      id: TOOLBAR.ALIGN_RIGHT_BTN_ID
+      id: ID.ALIGN_RIGHT_BTN,
+      className: ICON.ALIGN_RIGHT
    });
 };
 
@@ -162,8 +164,8 @@ export const addAlignCenterBtn = parent => {
    const alignCenterBtn = createTool({
       parent: parent,
       type: ELEMENT.BUTTON,
-      className: ICON.ALIGN_CENTER,
-      id: TOOLBAR.ALIGN_CENTER_BTN_ID
+      id: ID.ALIGN_CENTER_BTN,
+      className: ICON.ALIGN_CENTER
    });
 };
 
@@ -176,8 +178,8 @@ export const addAlignJustifyBtn = parent => {
    const alignJustifyBtn = createTool({
       parent: parent,
       type: ELEMENT.BUTTON,
-      className: ICON.ALIGN_JUSTIFY,
-      id: TOOLBAR.ALIGN_JUSTIFY_BTN_ID
+      id: ID.ALIGN_JUSTIFY_BTN,
+      className: ICON.ALIGN_JUSTIFY
    });
 
    addSeperator(alignJustifyBtn);
