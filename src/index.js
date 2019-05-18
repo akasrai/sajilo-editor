@@ -21,6 +21,7 @@ const SajiloEditor = {
       initToolBar(editor);
 
       this.setActiveTool(editor);
+      // this.setDefaultPasteAsPlainText(editor);
    },
 
    setActiveTool(editor) {
@@ -28,7 +29,7 @@ const SajiloEditor = {
          const toolStatus = this.getToolStatus();
 
          Object.keys(toolStatus).forEach(key => {
-            toolStatus[key] === "true"
+            toolStatus[key] === true
                ? document.getElementById(key).classList.add(CLASS.ACTIVE_BTN)
                : document
                     .getElementById(key)
@@ -39,11 +40,24 @@ const SajiloEditor = {
 
    getToolStatus() {
       return {
-         boldBtn: document.queryCommandValue("bold"),
-         italicBtn: document.queryCommandValue("italic"),
-         underlineBtn: document.queryCommandValue("underline"),
-         strikeBtn: document.queryCommandValue("strikethrough")
+         boldBtn: document.queryCommandState("bold"),
+         italicBtn: document.queryCommandState("italic"),
+         underlineBtn: document.queryCommandState("underline"),
+         strikeBtn: document.queryCommandState("strikethrough"),
+
+         justifyFull: document.queryCommandState("justifyFull"),
+         justifyLeft: document.queryCommandState("justifyLeft"),
+         justifyRight: document.queryCommandState("justifyRight"),
+         justifyCenter: document.queryCommandState("justifyCenter")
       };
+   },
+
+   setDefaultPasteAsPlainText(editor) {
+      editor.addEventListener("paste", e => {
+         e.preventDefault();
+         let text = e.clipboardData.getData("text/plain");
+         document.execCommand("insertHTML", false, text);
+      });
    }
 };
 

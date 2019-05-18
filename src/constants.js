@@ -26,10 +26,12 @@ export const ID = {
    UNDERLINE_BTN: "underlineBtn",
    TEXT_HIGHLIGHT_BTN: "textHighlight",
 
-   ALIGN_LEFT_BTN: "alignLeft",
-   ALIGN_RIGHT_BTN: "alignRight",
-   ALIGN_CENTER_BTN: "alignCenter",
-   ALIGN_JUSTIFY_BTN: "alignJustify"
+   JUSTIFY_LEFT_BTN: "justifyLeft",
+   JUSTIFY_FULL_BTN: "justifyFull",
+   JUSTIFY_RIGHT_BTN: "justifyRight",
+   JUSTIFY_CENTER_BTN: "justifyCenter",
+
+   REMOVE_FORMAT: "removeFormat"
 };
 
 export const FOOTBAR = {
@@ -71,8 +73,10 @@ export const ICON = {
    UNDERLINE: "U",
    STRIKE: "&nbsp;S&nbsp;",
 
-   ALIGN_LEFT: "glyphicon glyphicon-align-left",
-   ALIGN_RIGHT: "glyphicon glyphicon-align-right",
-   ALIGN_CENTER: "glyphicon glyphicon-align-center",
-   ALIGN_JUSTIFY: "glyphicon glyphicon-align-justify"
+   JUSTIFY_LEFT: "glyphicon glyphicon-align-left",
+   JUSTIFY_RIGHT: "glyphicon glyphicon-align-right",
+   JUSTIFY_FULL: "glyphicon glyphicon-align-justify",
+   JUSTIFY_CENTER: "glyphicon glyphicon-align-center",
+
+   REMOVE_FORMAT: "glyphicon glyphicon-remove"
 };

@@ -12,13 +12,21 @@ export const createTool = prop => {
 
    if (prop.list) elem.setAttribute("list", prop.list);
 
-   if (prop.type == ELEMENT.SELECT)
+   if (prop.type === ELEMENT.SELECT)
       elem.onchange = function(e) {
          handleToolAction(e);
       };
    else
       elem.onclick = function(e) {
-         setActive(elem);
+         if (
+            prop.id === ID.JUSTIFY_LEFT_BTN ||
+            prop.id === ID.JUSTIFY_RIGHT_BTN ||
+            prop.id === ID.JUSTIFY_CENTER_BTN ||
+            prop.id === ID.JUSTIFY_FULL_BTN
+         )
+            unsetActiveAlignment();
+
+         if (prop.setActive) setActive(elem);
          handleToolAction(e);
       };
 
@@ -59,6 +67,19 @@ const setActive = elem => {
       else classes.push(CLASS.ACTIVE_BTN);
       elem.className = classes.join(" ");
    }
+};
+
+const unsetActiveAlignment = () => {
+   const alignments = [
+      ID.JUSTIFY_FULL_BTN,
+      ID.JUSTIFY_LEFT_BTN,
+      ID.JUSTIFY_RIGHT_BTN,
+      ID.JUSTIFY_CENTER_BTN
+   ];
+
+   alignments.forEach(alignment => {
+      document.getElementById(alignment).classList.remove(CLASS.ACTIVE_BTN);
+   });
 };
 
 /**
@@ -119,6 +140,16 @@ const handleToolAction = event => {
          document.execCommand("fontSize", false, event.target.value);
          break;
 
+      case ID.JUSTIFY_LEFT_BTN:
+      case ID.JUSTIFY_FULL_BTN:
+      case ID.JUSTIFY_RIGHT_BTN:
+      case ID.JUSTIFY_CENTER_BTN:
+         formatTextAlignment(event.target.id);
+         break;
+      case ID.REMOVE_FORMAT:
+         removeTextFormat();
+         break;
+
       default:
          return;
    }
@@ -131,4 +162,13 @@ const handleToolAction = event => {
  */
 const formatTextBlock = tag => {
    document.execCommand("formatBlock", false, `<${tag}>`);
+};
+
+const formatTextAlignment = alignment => {
+   document.execCommand(alignment);
+};
+
+const removeTextFormat = () => {
+   const editor = document.getElementById(ID.TEXTAREA);
+   editor.innerHTML = editor.innerText || editor.textContent;
 };
