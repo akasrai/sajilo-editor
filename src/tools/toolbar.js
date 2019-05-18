@@ -30,7 +30,7 @@ const addToolBar = textArea => {
    textArea.insertAdjacentElement("beforeBegin", toolBar);
 
    Tools.addHeadingTypeList(toolBar);
-   Tools.addFontList(toolBar);
+   // Tools.addFontList(toolBar);
    Tools.addFontSizeList(toolBar);
 
    Tools.addBoldBtn(toolBar);
@@ -42,6 +42,8 @@ const addToolBar = textArea => {
    Tools.addAlignCenterBtn(toolBar);
    Tools.addAlignRightBtn(toolBar);
    Tools.addAlignJustifyBtn(toolBar);
+
+   Tools.addRemoveFormatBtn(toolBar);
 };
 
 /**

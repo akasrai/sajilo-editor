@@ -33,10 +33,11 @@
 #textColor,
 #underlineBtn,
 #textHighlight,
-#alignLeft,
-#alignRight,
-#alignCenter,
-#alignJustify {
+#justifyLeft,
+#justifyRight,
+#justifyCenter,
+#justifyFull,
+#removeFormat {
    padding: 4px 0;
    border-radius: 3px;
    margin: 0 1px 0 1px;
@@ -57,10 +58,11 @@
 #textColor:hover,
 #underlineBtn:hover,
 #textHighlight:hover,
-#alignLeft:hover,
-#alignRight:hover,
-#alignCenter:hover,
-#alignJustify:hover {
+#justifyLeft:hover,
+#justifyRight:hover,
+#justifyCenter:hover,
+#justifyFull:hover,
+#removeFormat:hover {
    background: rgb(210, 214, 216);
 }
 
