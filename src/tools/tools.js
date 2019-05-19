@@ -135,7 +135,24 @@ export const addStrikeBtn = parent => {
    });
    strikeBtn.innerHTML = ICON.STRIKE;
    strikeBtn.title = "Strike";
-   addSeperator(strikeBtn);
+};
+
+/**
+ * Adds strike through botton to toolbar.
+ *
+ * @param {Object} parent
+ */
+export const addTextColorBtn = parent => {
+   const textColor = createTool({
+      parent: parent,
+      setActive: true,
+      type: ELEMENT.BUTTON,
+      id: ID.TEXT_COLOR_BTN,
+      className: ICON.TEXT_COLOR
+   });
+
+   textColor.title = "Color";
+   addSeperator(textColor);
 };
 
 /**

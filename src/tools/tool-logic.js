@@ -115,6 +115,8 @@ export const addSeperator = parent => {
  * @param {Object} event
  */
 const handleToolAction = event => {
+   document.getElementById(ID.TEXTAREA).focus();
+
    switch (event.target.id) {
       case ID.BOLD_BTN:
          document.execCommand("bold");
