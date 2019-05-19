@@ -24,7 +24,7 @@ const addToolBar = textArea => {
    toolBar.style.width = toPercentage(100);
    toolBar.style.background = "#efefef";
    toolBar.style.border = "1px solid #888";
-   toolBar.style.padding = toPx(10);
+   toolBar.style.padding = toPx(2);
    toolBar.setAttribute("id", ID.TOOLBAR);
 
    textArea.insertAdjacentElement("beforeBegin", toolBar);
@@ -37,6 +37,7 @@ const addToolBar = textArea => {
    Tools.addItalicBtn(toolBar);
    Tools.addUnderlineBtn(toolBar);
    Tools.addStrikeBtn(toolBar);
+   Tools.addTextColorBtn(toolBar);
 
    Tools.addAlignLeftBtn(toolBar);
    Tools.addAlignCenterBtn(toolBar);

@@ -22,7 +22,7 @@ export const ID = {
    BOLD_BTN: "boldBtn",
    ITALIC_BTN: "italicBtn",
    STRIKE_BTN: "strikeBtn",
-   TEXT_COLOR_BTN: "textBolor",
+   TEXT_COLOR_BTN: "textColor",
    UNDERLINE_BTN: "underlineBtn",
    TEXT_HIGHLIGHT_BTN: "textHighlight",
 
@@ -72,6 +72,8 @@ export const ICON = {
    ITALIC: "I",
    UNDERLINE: "U",
    STRIKE: "&nbsp;S&nbsp;",
+
+   TEXT_COLOR: "glyphicon glyphicon-text-color",
 
    JUSTIFY_LEFT: "glyphicon glyphicon-align-left",
    JUSTIFY_RIGHT: "glyphicon glyphicon-align-right",
