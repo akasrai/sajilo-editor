@@ -14,6 +14,7 @@ import {
    addSeperator,
    addSelectOption
 } from "./tool-logic";
+import { toPx } from "../utils";
 /**
  * Add Heading types in toolbar.
  *
@@ -28,6 +29,7 @@ export const addHeadingTypeList = parent => {
       className: CLASS.SELECT_TAG
    });
 
+   selectTagParent.style.width = toPx(100);
    addSeperator(selectTagParent);
    headingTypeList.title = "Paragraph Format";
    addSelectOption(headingTypeList, HEADING_TYPES);
@@ -65,6 +67,7 @@ export const addFontSizeList = parent => {
       className: CLASS.SELECT_TAG
    });
 
+   selectTagParent.style.width = toPx(40);
    fontSizeList.title = "Font Size";
    addSeperator(selectTagParent);
    addSelectOption(fontSizeList, FONT_SIZE);
