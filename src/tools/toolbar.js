@@ -22,8 +22,8 @@ const addToolBar = textArea => {
    const toolBar = document.createElement("div");
 
    toolBar.style.width = toPercentage(100);
-   toolBar.style.background = "#efefef";
-   toolBar.style.border = "1px solid #888";
+   toolBar.style.background = "#fff";
+   toolBar.style.border = "1px solid #c5c5c5";
    toolBar.style.padding = toPx(2);
    toolBar.setAttribute("id", ID.TOOLBAR);
 
@@ -55,11 +55,11 @@ const addToolBar = textArea => {
 const addFooterBar = textArea => {
    const footerBar = document.createElement("div");
 
-   footerBar.style.height = toPx(40);
-   footerBar.style.width = toPercentage(100);
-   footerBar.style.background = "#efefef";
-   footerBar.style.border = "1px solid #888";
+   footerBar.style.padding = toPx(2);
+   footerBar.style.background = "#fff";
    footerBar.setAttribute("id", FOOTBAR.ID);
+   footerBar.style.width = toPercentage(100);
+   footerBar.style.border = "1px solid #c5c5c5";
 
    textArea.insertAdjacentElement("afterEnd", footerBar);
 };

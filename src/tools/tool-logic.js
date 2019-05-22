@@ -105,6 +105,7 @@ export const addSeperator = parent => {
    const seperator = document.createElement("span");
    seperator.style.color = "#ababab";
    seperator.innerHTML = TOOLBAR.SEPERATOR;
+   seperator.style.verticalAlign = "sub";
 
    parent.insertAdjacentElement("afterEnd", seperator);
 };

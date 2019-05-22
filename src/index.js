@@ -1,10 +1,11 @@
 import "@babel/polyfill";
-import { ID, CLASS } from "./constants";
+
 import { initToolBar } from "./tools";
+import { toPercentage } from "./utils";
+import { ID, CLASS } from "./constants";
 
 import "./assets/css/icon.css";
 import "./assets/css/style.css";
-import { toPercentage } from "./utils";
 
 const SajiloEditor = {
    init(props) {

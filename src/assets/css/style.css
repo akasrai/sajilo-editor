@@ -13,8 +13,8 @@
 
 .sajilo-editor {
    border: none;
-   border-left: 1px solid #888;
-   border-right: 1px solid #888;
+   border-left: 1px solid #c5c5c5;
+   border-right: 1px solid #c5c5c5;
    width: 100%;
    height: 300px;
    padding: 10px;
@@ -49,6 +49,7 @@
    border: none;
    background: transparent;
    outline: none;
+   vertical-align: top;
 }
 
 #boldBtn:hover,
@@ -62,7 +63,7 @@
 #justifyCenter:hover,
 #justifyFull:hover,
 #removeFormat:hover {
-   background: rgb(210, 214, 216);
+   background: rgb(212, 212, 212) !important;
 }
 
 #boldBtn {
@@ -81,8 +82,14 @@
    text-decoration: line-through;
 }
 
+#fontSizeList,
+#headingType {
+   position: absolute;
+   width: 100%;
+}
+
 .active-btn {
-   background: rgb(210, 214, 216) !important;
+   background: rgba(212, 212, 212, 0.77) !important;
 }
 
 .html-textarea {
@@ -113,6 +120,7 @@
 
 /* Custom .select-box */
 .select-box-wrapper {
+   height: 29px;
    position: relative;
    display: inline-flex;
    background: transparent;
@@ -120,6 +128,8 @@
    border-radius: 0.25em;
    margin: 0 1px;
    color: #353535;
+   justify-content: flex-end;
+   vertical-align: top;
 }
 
 .select-box {
@@ -140,7 +150,7 @@
    -o-transition: 0.25s all ease;
    transition: 0.25s all ease;
    margin: 0px 0;
-   padding: 0 3px 0 0;
+   padding: 0 3px;
    font-size: 18px;
 }
 
@@ -159,4 +169,9 @@ input.select-box {
 
 input.select-box::-webkit-calendar-picker-indicator {
    display: none;
+}
+
+.glyphicon {
+   top: 0;
+   line-height: normal;
 }
