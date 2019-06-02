@@ -1,30 +1,31 @@
 * {
-   padding: 0;
-   margin: 0;
-   box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .clearfix {
-   overflow: auto;
-   clear: both;
-   content: "";
-   display: table;
+  overflow: auto;
+  clear: both;
+  content: '';
+  display: table;
 }
 
 .sajilo-editor {
-   border: none;
-   border-left: 1px solid #c5c5c5;
-   border-right: 1px solid #c5c5c5;
-   width: 100%;
-   height: 300px;
-   padding: 10px;
-   overflow-y: auto;
-   background: white;
+  border: none;
+  border-left: 1px solid #c5c5c5;
+  border-right: 1px solid #c5c5c5;
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+  overflow-y: auto;
+  background: white;
+  position: relative;
 
-   outline: none;
-   -webkit-box-shadow: none;
-   -moz-box-shadow: none;
-   box-shadow: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
 
 #boldBtn,
@@ -38,18 +39,18 @@
 #justifyCenter,
 #justifyFull,
 #removeFormat {
-   padding: 7px 0;
-   border-radius: 3px;
-   margin: 0 1px 0 1px;
-   display: inline-block;
-   cursor: pointer;
-   width: 27px;
-   text-align: center;
-   color: #353535;
-   border: none;
-   background: transparent;
-   outline: none;
-   vertical-align: top;
+  padding: 7px 0;
+  border-radius: 3px;
+  margin: 0 1px 0 1px;
+  display: inline-block;
+  cursor: pointer;
+  width: 27px;
+  text-align: center;
+  color: #353535;
+  border: none;
+  background: transparent;
+  outline: none;
+  vertical-align: top;
 }
 
 #boldBtn:hover,
@@ -63,115 +64,178 @@
 #justifyCenter:hover,
 #justifyFull:hover,
 #removeFormat:hover {
-   background: rgb(212, 212, 212) !important;
+  background: rgb(212, 212, 212) !important;
 }
 
 #boldBtn {
-   font-weight: bold;
+  font-weight: bold;
 }
 
 #italicBtn {
-   font-style: italic;
+  font-style: italic;
 }
 
 #underlineBtn {
-   text-decoration: underline;
+  text-decoration: underline;
 }
 
 #strikeBtn {
-   text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 #fontSizeList,
 #headingType {
-   position: absolute;
-   width: 100%;
+  position: absolute;
+  width: 100%;
 }
 
 .active-btn {
-   background: rgba(212, 212, 212, 0.77) !important;
+  background: rgba(212, 212, 212, 0.77) !important;
 }
 
 .html-textarea {
-   width: 100%;
-   height: -moz-available; /* WebKit-based browsers will ignore this. */
-   height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
-   height: fill-available;
-   display: none;
+  width: 100%;
+  height: -moz-available; /* WebKit-based browsers will ignore this. */
+  height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  height: fill-available;
+  display: none;
 }
 
 /* Reset .select-box */
 .select-box {
-   -webkit-appearance: none;
-   -moz-appearance: none;
-   -ms-appearance: none;
-   appearance: none;
-   outline: 0;
-   box-shadow: none;
-   border: 0 !important;
-   background: transparent;
-   background-image: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: transparent;
+  background-image: none;
 }
 
 /* Remove IE arrow */
 .select-box::-ms-expand {
-   display: none;
+  display: none;
 }
 
 /* Custom .select-box */
 .select-box-wrapper {
-   height: 29px;
-   position: relative;
-   display: inline-flex;
-   background: transparent;
-   overflow: hidden;
-   border-radius: 0.25em;
-   margin: 0 1px;
-   color: #353535;
-   justify-content: flex-end;
-   vertical-align: top;
+  height: 29px;
+  position: relative;
+  display: inline-flex;
+  background: transparent;
+  overflow: hidden;
+  border-radius: 0.25em;
+  margin: 0 1px;
+  color: #353535;
+  justify-content: flex-end;
+  vertical-align: top;
 }
 
 .select-box {
-   flex: 1;
-   color: #353535;
-   cursor: pointer;
-   padding: 7px 6px;
+  flex: 1;
+  color: #353535;
+  cursor: pointer;
+  padding: 7px 6px;
 }
 
 /* Arrow */
 .select-box-wrapper::after {
-   content: "\2304";
-   position: relative;
-   background: transparent;
-   cursor: pointer;
-   pointer-events: none;
-   -webkit-transition: 0.25s all ease;
-   -o-transition: 0.25s all ease;
-   transition: 0.25s all ease;
-   margin: 0px 0;
-   padding: 0 3px;
-   font-size: 18px;
+  content: '\2304';
+  position: relative;
+  background: transparent;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  -o-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+  margin: 0px 0;
+  padding: 0 3px;
+  font-size: 18px;
 }
 
 /* Transition */
 .select-box-wrapper:hover::after {
-   color: #242423;
+  color: #242423;
 }
 
 .select-box-wrapper:hover {
-   background: rgb(210, 214, 216);
+  background: rgb(210, 214, 216);
 }
 
 input.select-box {
-   width: 40px;
+  width: 40px;
 }
 
 input.select-box::-webkit-calendar-picker-indicator {
-   display: none;
+  display: none;
 }
 
 .glyphicon {
-   top: 0;
-   line-height: normal;
+  top: 0;
+  line-height: normal;
+}
+
+.inline-tools {
+  background-color: #f5f4f4;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px #585858;
+  display: block;
+  font-size: 12px;
+  padding: 4px 6px;
+  position: absolute;
+  -webkit-transform: translate(5%, -70%);
+  transform: translate(5%, -70%);
+  transition: top 0.1s ease 0s, left 0.1s ease 0s;
+  white-space: nowrap;
+  width: auto;
+  z-index: 9999;
+}
+.inline-tools:after {
+  background-color: #f5f4f4;
+  content: '';
+  height: 10px;
+  position: absolute;
+  width: 15px;
+  z-index: -1;
+}
+.inline-tools--position:after {
+  bottom: 0;
+  left: 0;
+  -webkit-transform: translate(-10%, 10%) rotate(-15deg) skewX(-40deg);
+  transform: translate(-10%, 10%) rotate(-15deg) skewX(-40deg);
+}
+.inline-tools--selection {
+  -webkit-transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
+}
+.inline-tools--selection:after {
+  bottom: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0) rotate(45deg);
+  transform: translate(-50%, 0) rotate(45deg);
+}
+.inline-tools--custom {
+  -webkit-transform: translate(16px, 16px);
+  transform: translate(16px, 16px);
+}
+.inline-tools--custom:after {
+  display: none;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
