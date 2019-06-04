@@ -25,6 +25,7 @@ export const ID = {
   TEXT_COLOR_BTN: 'textColor',
   UNDERLINE_BTN: 'underlineBtn',
   TEXT_HIGHLIGHT_BTN: 'textHighlight',
+  QUOTES_BTN: 'quotesBtn',
 
   JUSTIFY_LEFT_BTN: 'justifyLeft',
   JUSTIFY_FULL_BTN: 'justifyFull',
@@ -71,6 +72,7 @@ export const FONT_SIZE = [8, 9, 10, 11, 12, 14, 18, 24, 30, 48, 60, 72, 96];
 
 export const ICON = {
   BOLD: 'B',
+  QUOTES: '"',
   ITALIC: 'I',
   UNDERLINE: 'U',
   STRIKE: '&nbsp;S&nbsp;',

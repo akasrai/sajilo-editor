@@ -50,6 +50,8 @@ const addToolBar = textArea => {
   Tools.addAlignJustifyBtn(toolBar);
 
   Tools.addRemoveFormatBtn(toolBar);
+
+  Tools.addQuotesBtn(toolBar);
 };
 
 /**

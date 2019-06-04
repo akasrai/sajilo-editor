@@ -143,6 +143,9 @@ const handleToolAction = event => {
       document.execCommand('fontSize', false, event.target.value);
       break;
 
+    case ID.QUOTES_BTN:
+      wrapTextAsQuotes();
+      break;
     case ID.JUSTIFY_LEFT_BTN:
     case ID.JUSTIFY_FULL_BTN:
     case ID.JUSTIFY_RIGHT_BTN:
@@ -178,4 +181,14 @@ const formatTextAlignment = alignment => {
 const removeTextFormat = () => {
   const editor = document.getElementById(ID.TEXTAREA);
   editor.innerHTML = editor.innerText || editor.textContent;
+};
+
+const wrapTextAsQuotes = () => {
+  const wrapper = document.createElement('p');
+  const selection = window.getSelection().toString();
+  wrapper.classList = 'quotes';
+  wrapper.innerHTML = selection;
+
+  document.execCommand('insertHTML', true, wrapper.outerHTML);
+  document.execCommand('italic');
 };

@@ -246,6 +246,23 @@ export const addRemoveFormatBtn = parent => {
 };
 
 /**
+ * Quotes button.
+ *
+ * @param {Object} parent
+ */
+export const addQuotesBtn = parent => {
+  const quotesBtn = createTool({
+    parent: parent,
+    setActive: true,
+    type: ELEMENT.BUTTON,
+    id: ID.QUOTES_BTN
+  });
+
+  quotesBtn.title = 'Quotes';
+  quotesBtn.innerHTML = ICON.QUOTES;
+};
+
+/**
  * Adds inline formating tools.
  *
  * @param {String} modifier
