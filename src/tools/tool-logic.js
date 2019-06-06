@@ -175,7 +175,7 @@ const formatTextAlignment = alignment => {
 };
 
 /**
- * Remove text formats.
+ * Removes text formats.
  *
  */
 const removeTextFormat = () => {
@@ -184,10 +184,10 @@ const removeTextFormat = () => {
 };
 
 const wrapTextAsQuotes = () => {
-  const wrapper = document.createElement('p');
+  const wrapper = document.createElement('blockquote');
   const selection = window.getSelection().toString();
-  wrapper.classList = 'quotes';
-  wrapper.innerHTML = selection;
+  wrapper.classList = 'sajilo-block-quotes';
+  wrapper.innerHTML = `${selection}&nbsp`;
 
   document.execCommand('insertHTML', true, wrapper.outerHTML);
   document.execCommand('italic');

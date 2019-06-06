@@ -21,6 +21,10 @@ const SajiloEditor = {
 
     initToolBar(editor);
 
+    this.initEditor(editor);
+    // document.execCommand('formatblock', true, 'p');
+    // const selectedElement = window.getSelection().focusNode;
+    // selectedElement.classList = 'sajilo-paragraph';
     this.setActiveTool(editor);
 
     // this.setDefaultPasteAsPlainText(editor);
@@ -38,6 +42,32 @@ const SajiloEditor = {
     });
   },
 
+  initEditor(editor) {
+    editor.onkeypress = function(e) {
+      if (e.keyCode === 13) {
+        console.log('haha');
+        // document.execCommand('insertHTML', true, '<p></p>');
+        // document.execCommand('insertText', true, '\n');
+        // document.execCommand('insertParagraph', true);
+        setTimeout(() => {
+          document.execCommand('formatblock', true, 'p');
+        }, 1);
+
+        // document.execCommand('defaultParagraphSeparator', true);
+
+        // if (window.getSelection) {
+        //   const selectedText = window.getSelection();
+        //   if (selectedText.rangeCount) {
+        //     const range = selectedText.getRangeAt(0).cloneRange();
+
+        //     range.surroundContents(document.createElement('p'));
+        //     selectedText.removeAllRanges();
+        //     selectedText.addRange(range);
+        //   }
+        // }
+      }
+    };
+  },
   getToolStatus() {
     return {
       boldBtn: document.queryCommandState('bold'),
