@@ -11,11 +11,7 @@ export const initToolBar = parent => {
 
   addToolBar(textArea);
   addFooterBar(textArea);
-
-  textArea.onkeyup = function(e) {
-    initInlineTools(e);
-  };
-  textArea.addEventListener('mouseup', initInlineTools);
+  initInlineTools(textArea);
 };
 
 /**
@@ -74,18 +70,9 @@ const addFooterBar = textArea => {
  *
  * @param {Object} e
  */
-const initInlineTools = e => {
-  const { currentTarget: editor } = e;
+const initInlineTools = editor => {
   const { offsetLeft, offsetWidth, scrollLeft, scrollTop } = editor;
   console.log(offsetLeft, offsetWidth, screenTop);
-
-  let selectionEnd = 0,
-    selectionStart = 0;
-  if (window.getSelection) {
-    const userSelection = window.getSelection();
-    selectionEnd = userSelection.focusOffset;
-    selectionStart = userSelection.anchorOffset;
-  }
 
   const showInlineToolBar = () => {
     editor.__IS_SHOWING_INLINE_TOOL = true;
@@ -101,22 +88,28 @@ const initInlineTools = e => {
     }
   };
 
-  if (!editor.__IS_SHOWING_INLINE_TOOL && selectionStart !== selectionEnd) {
-    showInlineToolBar();
-  } else if (
-    editor.__IS_SHOWING_INLINE_TOOL &&
-    selectionStart === selectionEnd
-  ) {
-    hideInlineToolBar();
-  }
+  document.addEventListener('selectionchange', function () {
+    const userSelection = window.getSelection();
+    const range = userSelection.getRangeAt(0);
+    const rect = range.getBoundingClientRect();
+    const text = range.toString();
 
-  if (editor.__IS_SHOWING_INLINE_TOOL) {
-    const left = e.clientX || offsetLeft;
-    const top = e.clientY || screenTop;
 
-    editor.__INLINE_TOOL.setAttribute(
+    if (!editor.__IS_SHOWING_INLINE_TOOL && text.length > 1) {
+      showInlineToolBar();
+    }
+    if (editor.__IS_SHOWING_INLINE_TOOL && text.length < 1) {
+      hideInlineToolBar();
+    }
+
+    if (!editor.__INLINE_TOOL) return;
+    // calculate selection offset
+    const left = rect.x + rect.width / 2;
+    const top = editor.clientY || screenTop;
+
+    editor.__INLINE_TOOL && editor.__INLINE_TOOL.setAttribute(
       'style',
-      `left: ${left}px; top: ${top - 15}px`
+      `left: ${left}px; top: ${rect.y + top - 15}px`
     );
-  }
+  })
 };
