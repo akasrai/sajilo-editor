@@ -98,13 +98,13 @@ const initInlineTools = editor => {
     if (!editor.__IS_SHOWING_INLINE_TOOL && text.length > 1) {
       showInlineToolBar();
     }
-    if (!!editor.__IS_SHOWING_INLINE_TOOL && text.length < 1) {
+    if (editor.__IS_SHOWING_INLINE_TOOL && text.length < 1) {
       hideInlineToolBar();
     }
 
     if (!editor.__INLINE_TOOL) return;
     // calculate selection offset
-    const left = (rect.x - offsetLeft) + editor.__INLINE_TOOL.clientWidth / 2 + rect.width / 2;
+    const left = rect.x + rect.width / 2;
     const top = editor.clientY || screenTop;
 
     editor.__INLINE_TOOL && editor.__INLINE_TOOL.setAttribute(
