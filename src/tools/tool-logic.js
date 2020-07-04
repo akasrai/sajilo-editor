@@ -1,11 +1,6 @@
 import { TOOLBAR, ID, CLASS, ELEMENT } from '../constants';
 
-/**
- * Creates element according to properties given.
- *
- * @param {Object} prop
- */
-export const createTool = prop => {
+export const createTool = (prop) => {
   const elem = document.createElement(prop.type);
   elem.setAttribute('id', prop.id || '');
   elem.className = prop.className || '';
@@ -13,11 +8,11 @@ export const createTool = prop => {
   if (prop.list) elem.setAttribute('list', prop.list);
 
   if (prop.type === ELEMENT.SELECT)
-    elem.onchange = function(e) {
+    elem.onchange = function (e) {
       handleToolAction(e);
     };
   else
-    elem.onclick = function(e) {
+    elem.onclick = function (e) {
       if (
         prop.id === ID.JUSTIFY_LEFT_BTN ||
         prop.id === ID.JUSTIFY_RIGHT_BTN ||
@@ -35,12 +30,6 @@ export const createTool = prop => {
   return elem;
 };
 
-/**
- * Adds option to select element.
- *
- * @param {Object} parent
- * @param {Object} options
- */
 export const addSelectOption = (parent, options) => {
   for (let key in options) {
     const option = document.createElement('option');
@@ -50,12 +39,7 @@ export const addSelectOption = (parent, options) => {
   }
 };
 
-/**
- * Set active toolbar button.
- *
- * @param {Object} elem
- */
-const setActive = elem => {
+const setActive = (elem) => {
   if (elem.classList) {
     elem.classList.toggle(CLASS.ACTIVE_BTN);
   } else {
@@ -74,20 +58,15 @@ const unsetActiveAlignment = () => {
     ID.JUSTIFY_FULL_BTN,
     ID.JUSTIFY_LEFT_BTN,
     ID.JUSTIFY_RIGHT_BTN,
-    ID.JUSTIFY_CENTER_BTN
+    ID.JUSTIFY_CENTER_BTN,
   ];
 
-  alignments.forEach(alignment => {
+  alignments.forEach((alignment) => {
     document.getElementById(alignment).classList.remove(CLASS.ACTIVE_BTN);
   });
 };
 
-/**
- * Adds wrapper to select tag.
- *
- * @param {Object} textArea
- */
-export const selectParent = parent => {
+export const selectParent = (parent) => {
   const selectTagParent = document.createElement('div');
 
   selectTagParent.className = CLASS.SELECT_TAG_PARENT;
@@ -96,12 +75,7 @@ export const selectParent = parent => {
   return selectTagParent;
 };
 
-/**
- * Adds seperator after tool section.
- *
- * @param {Object} parent
- */
-export const addSeperator = parent => {
+export const addSeperator = (parent) => {
   const seperator = document.createElement('span');
   seperator.style.color = '#ababab';
   seperator.innerHTML = TOOLBAR.SEPERATOR;
@@ -110,12 +84,7 @@ export const addSeperator = parent => {
   parent.insertAdjacentElement('afterEnd', seperator);
 };
 
-/**
- * Handles button action accordinf to their type.
- *
- * @param {Object} event
- */
-const handleToolAction = event => {
+const handleToolAction = (event) => {
   document.getElementById(ID.TEXTAREA).focus();
 
   switch (event.target.id) {
@@ -161,23 +130,14 @@ const handleToolAction = event => {
   }
 };
 
-/**
- * Formats text with given tag name.
- *
- * @param {String} tag
- */
-const formatTextBlock = tag => {
+const formatTextBlock = (tag) => {
   document.execCommand('formatBlock', false, `<${tag}>`);
 };
 
-const formatTextAlignment = alignment => {
+const formatTextAlignment = (alignment) => {
   document.execCommand(alignment);
 };
 
-/**
- * Removes text formats.
- *
- */
 const removeTextFormat = () => {
   const editor = document.getElementById(ID.TEXTAREA);
   editor.innerHTML = editor.innerText || editor.textContent;
@@ -189,6 +149,6 @@ const wrapTextAsQuotes = () => {
   wrapper.classList = 'sajilo-block-quotes';
   wrapper.innerHTML = `${selection}&nbsp`;
 
-  document.execCommand('insertHTML', true, wrapper.outerHTML);
+  document.execCommand('insertHTML', false, wrapper.outerHTML);
   document.execCommand('italic');
 };

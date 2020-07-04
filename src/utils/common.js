@@ -6,7 +6,7 @@ import { ID } from '../constants';
  *
  * @param {Number} value
  */
-export const toPx = value => {
+export const toPx = (value) => {
   return `${value}px`;
 };
 
@@ -15,7 +15,7 @@ export const toPx = value => {
  *
  * @param {Number} value
  */
-export const toPercentage = value => {
+export const toPercentage = (value) => {
   return `${value}%`;
 };
 
@@ -58,6 +58,6 @@ export const getCursorXY = (editor, selectionPoint) => {
   // return an object with the x and y of the caret. account for input positioning so that you don't need to wrap the input
   return {
     x: inputX + spanX,
-    y: inputY + spanY
+    y: inputY + spanY,
   };
 };

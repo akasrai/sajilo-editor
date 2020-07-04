@@ -13,8 +13,8 @@
 
 .sajilo-editor {
   border: none;
-  border-left: 1px solid #c5c5c5;
-  border-right: 1px solid #c5c5c5;
+  border-left: 1px solid rgb(233, 233, 233);
+  border-right: 1px solid rgb(233, 233, 233);
   width: 100%;
   height: 300px;
   padding: 10px;
@@ -28,18 +28,27 @@
   box-shadow: none;
 }
 
-#boldBtn,
-#italicBtn,
-#strikeBtn,
+#sajilo-toolbar {
+  /* box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.288); */
+  border: 1px solid rgb(233, 233, 233);
+}
+
+#footbar {
+  border: 1px solid rgb(233, 233, 233);
+}
+
+#btnBold,
+#btnItalic,
+#btnStrike,
 #textColor,
-#underlineBtn,
-#textHighlight,
+#btnUnderline,
+#text-highlight,
 #justifyLeft,
 #justifyRight,
 #justifyCenter,
 #justifyFull,
-#removeFormat,
-#quotesBtn {
+#remove-format,
+#btn-quotes {
   padding: 7px 0;
   border-radius: 3px;
   margin: 0 1px 0 1px;
@@ -54,39 +63,39 @@
   vertical-align: top;
 }
 
-#boldBtn:hover,
-#italicBtn:hover,
-#strikeBtn:hover,
+#btnBold:hover,
+#btnItalic:hover,
+#btnStrike:hover,
 #textColor:hover,
-#underlineBtn:hover,
-#textHighlight:hover,
+#btnUnderline:hover,
+#text-highlight:hover,
 #justifyLeft:hover,
 #justifyRight:hover,
 #justifyCenter:hover,
 #justifyFull:hover,
-#removeFormat:hover,
-#quotesBtn:hover {
+#remove-format:hover,
+#btn-quotes:hover {
   background: rgb(212, 212, 212) !important;
 }
 
-#boldBtn {
+#btnBold {
   font-weight: bold;
 }
 
-#italicBtn {
+#btnItalic {
   font-style: italic;
 }
 
-#underlineBtn {
+#btnUnderline {
   text-decoration: underline;
 }
 
-#strikeBtn {
+#btnStrike {
   text-decoration: line-through;
 }
 
-#fontSizeList,
-#headingType {
+#font-size-list,
+#heading-type {
   position: absolute;
   width: 100%;
 }
@@ -243,7 +252,7 @@ input.select-box::-webkit-calendar-picker-indicator {
 }
 
 .sajilo-block-quotes {
-  margin: 10px 20px;
+  margin: 20px 20px;
   padding: 5px 10px;
   border-left: 2px solid black;
 }

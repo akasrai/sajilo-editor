@@ -1,5 +1,5 @@
 export const TOOLBAR = {
-  SEPERATOR: '|'
+  SEPERATOR: '|',
 };
 
 export const CLASS = {
@@ -7,36 +7,36 @@ export const CLASS = {
   SELECT_TAG: 'select-box',
   TEXTAREA: 'sajilo-editor',
   HTML_TEXTAREA: 'html-textarea',
-  SELECT_TAG_PARENT: 'select-box-wrapper'
+  SELECT_TAG_PARENT: 'select-box-wrapper',
 };
 
 export const ID = {
-  TOOLBAR: 'toolbar',
+  TOOLBAR: 'sajilo-toolbar',
 
-  FONT_LIST: 'fontList',
-  TEXTAREA: 'sajiloEditor',
+  FONT_LIST: 'font-list',
+  TEXTAREA: 'sajilo-editor',
 
-  HEADING_TYPE: 'headingType',
-  FONT_SIZE_LIST: 'fontSizeList',
+  HEADING_TYPE: 'heading-type',
+  FONT_SIZE_LIST: 'font-size-list',
 
-  BOLD_BTN: 'boldBtn',
-  ITALIC_BTN: 'italicBtn',
-  STRIKE_BTN: 'strikeBtn',
+  BOLD_BTN: 'btnBold',
+  ITALIC_BTN: 'btnItalic',
+  STRIKE_BTN: 'btnStrike',
   TEXT_COLOR_BTN: 'textColor',
-  UNDERLINE_BTN: 'underlineBtn',
-  TEXT_HIGHLIGHT_BTN: 'textHighlight',
-  QUOTES_BTN: 'quotesBtn',
+  UNDERLINE_BTN: 'btnUnderline',
+  TEXT_HIGHLIGHT_BTN: 'text-highlight',
+  QUOTES_BTN: 'btn-quotes',
 
   JUSTIFY_LEFT_BTN: 'justifyLeft',
   JUSTIFY_FULL_BTN: 'justifyFull',
   JUSTIFY_RIGHT_BTN: 'justifyRight',
   JUSTIFY_CENTER_BTN: 'justifyCenter',
 
-  REMOVE_FORMAT: 'removeFormat'
+  REMOVE_FORMAT: 'remove-format',
 };
 
 export const FOOTBAR = {
-  ID: 'footbar'
+  ID: 'footbar',
 };
 
 export const ELEMENT = {
@@ -51,7 +51,7 @@ export const ELEMENT = {
   SELECT: 'select',
   DATA_LIST: 'datalist',
   INLINE_TOOL: 'inline-tools',
-  INLINE_TOOL_VISIBLE: 'inline-tools--visible'
+  INLINE_TOOL_VISIBLE: 'inline-tools--visible',
 };
 
 export const HEADING_TYPES = {
@@ -59,13 +59,13 @@ export const HEADING_TYPES = {
   h1: 'Heading 1',
   h2: 'Heading 2',
   h3: 'Heading 3',
-  h4: 'Heading 4'
+  h4: 'Heading 4',
 };
 
 export const FONTS = {
   arial: 'Arial',
   impact: 'Impact',
-  calibri: 'Calibri'
+  calibri: 'Calibri',
 };
 
 export const FONT_SIZE = [8, 9, 10, 11, 12, 14, 18, 24, 30, 48, 60, 72, 96];
@@ -84,5 +84,5 @@ export const ICON = {
   JUSTIFY_FULL: 'glyphicon glyphicon-align-justify',
   JUSTIFY_CENTER: 'glyphicon glyphicon-align-center',
 
-  REMOVE_FORMAT: 'glyphicon glyphicon-remove'
+  REMOVE_FORMAT: 'glyphicon glyphicon-remove',
 };

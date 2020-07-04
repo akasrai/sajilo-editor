@@ -1,8 +1,8 @@
 import '@babel/polyfill';
 
 import { initToolBar } from './tools';
-import { toPercentage, getSelectionArea } from './utils';
 import { ID, CLASS } from './constants';
+import { toPercentage, getSelectionArea } from './utils';
 
 import './assets/css/icon.css';
 import './assets/css/style.css';
@@ -21,10 +21,7 @@ const SajiloEditor = {
 
     initToolBar(editor);
 
-    this.initEditor(editor);
-    // document.execCommand('formatblock', true, 'p');
-    // const selectedElement = window.getSelection().focusNode;
-    // selectedElement.classList = 'sajilo-paragraph';
+    this.handleKeyPress(editor, parent);
     this.setActiveTool(editor);
 
     // this.setDefaultPasteAsPlainText(editor);
@@ -34,7 +31,7 @@ const SajiloEditor = {
     editor.addEventListener('keyup', () => {
       const toolStatus = this.getToolStatus();
 
-      Object.keys(toolStatus).forEach(key => {
+      Object.keys(toolStatus).forEach((key) => {
         toolStatus[key] === true
           ? document.getElementById(key).classList.add(CLASS.ACTIVE_BTN)
           : document.getElementById(key).classList.remove(CLASS.ACTIVE_BTN);
@@ -42,53 +39,40 @@ const SajiloEditor = {
     });
   },
 
-  initEditor(editor) {
-    editor.onkeypress = function(e) {
+  handleKeyPress(editor, parent) {
+    editor.onkeypress = function (e) {
       if (e.keyCode === 13) {
-        console.log('haha');
-        // document.execCommand('insertHTML', true, '<p></p>');
-        // document.execCommand('insertText', true, '\n');
-        // document.execCommand('insertParagraph', true);
         setTimeout(() => {
-          document.execCommand('formatblock', true, 'p');
+          document.execCommand('formatblock', false, 'p');
+          const focusNode = window.getSelection().focusNode;
+          focusNode.classList = 'sajilo-paragraph';
         }, 1);
-
-        // document.execCommand('defaultParagraphSeparator', true);
-
-        // if (window.getSelection) {
-        //   const selectedText = window.getSelection();
-        //   if (selectedText.rangeCount) {
-        //     const range = selectedText.getRangeAt(0).cloneRange();
-
-        //     range.surroundContents(document.createElement('p'));
-        //     selectedText.removeAllRanges();
-        //     selectedText.addRange(range);
-        //   }
-        // }
       }
+
+      parent.value = editor.innerHTML;
     };
   },
+
   getToolStatus() {
     return {
-      boldBtn: document.queryCommandState('bold'),
-      italicBtn: document.queryCommandState('italic'),
-      underlineBtn: document.queryCommandState('underline'),
-      strikeBtn: document.queryCommandState('strikethrough'),
-
+      btnBold: document.queryCommandState('bold'),
+      btnItalic: document.queryCommandState('italic'),
+      btnUnderline: document.queryCommandState('underline'),
+      btnStrike: document.queryCommandState('strikethrough'),
       justifyFull: document.queryCommandState('justifyFull'),
       justifyLeft: document.queryCommandState('justifyLeft'),
       justifyRight: document.queryCommandState('justifyRight'),
-      justifyCenter: document.queryCommandState('justifyCenter')
+      justifyCenter: document.queryCommandState('justifyCenter'),
     };
   },
 
   setDefaultPasteAsPlainText(editor) {
-    editor.addEventListener('paste', e => {
+    editor.addEventListener('paste', (e) => {
       e.preventDefault();
       let text = e.clipboardData.getData('text/plain');
       document.execCommand('insertHTML', false, text);
     });
-  }
+  },
 };
 
 window.SajiloEditor = SajiloEditor;
